@@ -33,8 +33,6 @@ public class Main {
 
         String task4 = String.format("Завдання 4 %s", str.concat(newStr));
         System.out.println(task4);
-
-
     }
 
 }
