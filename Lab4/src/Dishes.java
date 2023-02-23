@@ -6,14 +6,11 @@ public class Dishes{
     private String title;
 
     private float price;
-    private LocalDate expirationDate;
-
-    public Dishes(int id, String type, String title, float price,LocalDate expirationDate){
+    public Dishes(int id, String type, String title, float price){
         this.id = id;
         this.type = type;
         this.title = title;
         this.price = price;
-        this.expirationDate = expirationDate;
     }
 
     public int getId() {
@@ -22,14 +19,6 @@ public class Dishes{
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public LocalDate getDate() {
-        return expirationDate;
-    }
-
-    public void setDate(LocalDate expirationDate) {
-        this.expirationDate = expirationDate;
     }
 
     public String getTitle() {
@@ -61,7 +50,6 @@ public class Dishes{
         return "id=" + id +
                 ", Тип='" + type + '\'' +
                 ", Назва='" + title + '\'' +
-                ", Ціна=" + price +
-                ", Вжити До=" + expirationDate;
+                ", Ціна=" + price;
     }
 }

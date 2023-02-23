@@ -11,6 +11,30 @@ public class Workers extends Visitants{
         this.dateOfBirth = dateOfBirth;
     }
 
+    public LocalDate getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    public String getPip() {
+        return pip;
+    }
+
+    public String getPosition() {
+        return position;
+    }
+
+    public void setPip(String pip) {
+        this.pip = pip;
+    }
+
+    public void setDateOfBirth(LocalDate dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+    }
+
+    public void setPosition(String position) {
+        this.position = position;
+    }
+
     @Override
     public String toString() {
         return "Workers{" +
