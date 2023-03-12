@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f42eb4ae-63f1-456f-b05f-93db1ad77f15" name="Changes" comment="lab2 update merge">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="f42eb4ae-63f1-456f-b05f-93db1ad77f15" name="Changes" comment="lab2 update merge" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -65,6 +63,7 @@
       <workItem from="1676024194530" duration="4693000" />
       <workItem from="1676029932433" duration="207000" />
       <workItem from="1676141043337" duration="10000" />
+      <workItem from="1676275145461" duration="130000" />
     </task>
     <task id="LOCAL-00001" summary="lab2 update merge">
       <created>1676029981396</created>
