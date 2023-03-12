@@ -1,6 +1,6 @@
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class Orders {
     private int idOrder;
@@ -15,7 +15,7 @@ public class Orders {
         this.idWorker = idWorker;
         this.date = date;
     }
-    public int priceOrder(ArrayList<Dishes> dishes){
+    public int priceOrder(List<Dishes> dishes){
         int sum = 0;
         for(int i = 0; i<idDish.length;i++){
             sum += dishes.get(idDish[i]-1).getPrice();
@@ -63,6 +63,8 @@ public class Orders {
         this.idWorker = idWorker;
     }
 
+
+
     @Override
     public String toString() {
         return "Замовлення{" +
@@ -72,4 +74,6 @@ public class Orders {
                 ", Дата замовлення=" + date +
                 '}';
     }
+
+
 }

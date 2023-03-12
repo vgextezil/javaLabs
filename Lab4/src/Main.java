@@ -7,10 +7,12 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
-        ArrayList<Dishes> dishes = new ArrayList<>();
-        ArrayList<Visitants> visitants = new ArrayList<>();
-        ArrayList<Workers> workers = new ArrayList<>();
-        ArrayList<Orders> orders = new ArrayList<>();
+        List<Dishes> dishes = new ArrayList<>();
+        List<Visitants> visitants = new ArrayList<>();
+        List<Workers> workers = new ArrayList<>();
+        List<Orders> orders = new ArrayList<>();
+        List<LikedDish> likedDishes = new ArrayList<>();
+
 
         dishes.add(new Dishes(1,"Кава","Еспрессо",10 ));
         dishes.add(new Dishes(2,"Кава","Американо", 15));
@@ -46,17 +48,48 @@ public class Main {
         orders.add(new Orders(7,3, new int[]{2,3 },2,LocalDate.of(2023,8,13)));
         orders.add(new Orders(8,5, new int[]{7, 8},1,LocalDate.of(2021,5,13)));
         orders.add(new Orders(9,3, new int[]{6, 4},4,LocalDate.of(2021,2,1)));
+
+        likedDishes.add(new LikedDish(1,2,dishes));
+        likedDishes.add(new LikedDish(3,5,dishes));
+        likedDishes.get(0).toString(dishes,visitants);
+        likedDishes.get(1).toString(dishes,visitants);
+        //Sorting
+        likedDishes.sort((f1, f2) -> CharSequence.compare(f2.getDishes().get(f2.getIdDish()-1).getTitle(), f1.getDishes().get(f1.getIdDish()-1).getTitle()));
+        likedDishes.get(0).toString(dishes,visitants);
+        likedDishes.get(1).toString(dishes,visitants);
+        /*
         List<Integer> integers =check(orders);
         for (int i = 0;i<integers.size();i++){
-
+            System.out.println(integers.get(i).toString());
         }
+        */
+        //Sorting by price
+
+        orders.sort((f1, f2) -> Long.compare(f2.priceOrder(dishes), f1.priceOrder(dishes)));
+        orders.forEach(f -> System.out.print(f.priceOrder(dishes)+" "));
+        System.out.println(orders);
+
+        //sorting by liked dishes
+        /*
+        likedDishes.sort((f1, f2) -> CharSequence.compare(f2.getDishes().get(f2.getIdDish()-1).getTitle(), f1.getDishes().get(f1.getIdDish()-1).getTitle()));
+        likedDishes.get(0).toString(dishes,visitants);
+        likedDishes.get(1).toString(dishes,visitants);
+         */
+
+/*
+        System.out.println(orders);
+        orders.sort(
+                Comparator.comparing(Orders::getIdVisitant).thenComparing(Orders::getIdWorker)
+        );
+        System.out.println(orders);
+        */
 
     }
-    public static List<Integer> check(ArrayList<Orders> orders){
+     public static List<Integer> check(ArrayList<Orders> orders){
         List<Integer> integers = new ArrayList<>(orders.size());
-        for (int i = 0;i<orders.size();i++){
-            integers.add(orders.get(i).getIdVisitant());
-        }
+         for (Orders order : orders) {
+             integers.add(order.getIdVisitant());
+         }
         Collections.sort(integers);
         integers.sort(Comparator.comparingInt(i->Collections.frequency(integers, i)).reversed());
         return  integers;

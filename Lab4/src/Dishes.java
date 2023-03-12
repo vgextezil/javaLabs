@@ -4,7 +4,6 @@ public class Dishes{
     private int id;
     private String type;
     private String title;
-
     private float price;
     public Dishes(int id, String type, String title, float price){
         this.id = id;
