@@ -52,8 +52,9 @@ public class Main {
                 new Group(3,students3)
         );
 
-        OptionalInt maxTitleLength = maxTitleLength(books);
-        System.out.println("maxTitleLength = " + maxTitleLength);
+
+        //OptionalInt maxTitleLength = maxTitleLength(books);
+        //System.out.println("maxTitleLength = " + maxTitleLength.getAsInt());
         peek(employees);
 
         //5
@@ -62,13 +63,18 @@ public class Main {
 
 
         Integer reduce = reduce(integers);
-        //System.out.printf(reduce.toString());
+        System.out.printf(reduce.toString());
 
         System.out.println(collect(employees));
 
-        System.out.println(flatMap(groups));
+        //System.out.println(flatMap(groups));
 
-        System.out.println(toArray(books));
+        //System.out.println(Arrays.toString(toArray(books)));
+        //System.out.println(filter(employees,200));
+    }
+
+    public static Optional<Employee> filter(List<Employee> employees, int salary){
+        return employees.stream().filter(employee -> employee.getSalary()>salary).findFirst();
     }
 
     public static String[] toArray(List<Book> books) {
@@ -86,7 +92,7 @@ public class Main {
         return groups.stream()
                 .flatMap(group -> group.getStudents()
                         .stream())
-                .max(Comparator.comparingDouble(Student::getAverageMark));
+                .max(Comparator.comparing(Student::getAverageMark));
     }
 
     public static void peek(List<Employee> employees){
