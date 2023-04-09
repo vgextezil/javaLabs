@@ -1,4 +1,4 @@
-public class GenecicsClass<T> {
+public class GenericsClass<T> {
     private T value;
 
     public void setValue(T value) {
@@ -8,7 +8,7 @@ public class GenecicsClass<T> {
     public T getValue() {
         return value;
     }
-    public GenecicsClass(T value){
+    public GenericsClass(T value){
         this.value = value;
     }
     public String showType(){

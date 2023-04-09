@@ -13,7 +13,7 @@ public class Visitants extends People{
 
     @Override
     public String toString() {
-        return "People{" +
+        return "Visitants{" +
                 "id=" + getId() +
                 '}';
     }
